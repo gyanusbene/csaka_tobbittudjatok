@@ -1,352 +1,370 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoHunt - Használtautók</title>
+    <title>AutoMarket | Quality Used Cars</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header Section -->
     <header>
         <div class="container">
             <div class="header-top">
                 <div class="logo">
                     <i class="fas fa-car"></i>
-                    AutoHunt
+                    <h1>markanev</h1>
                 </div>
-                
+                <div class="search-bar">
+                    <input type="text" placeholder="Keresés az autók között...">
+                    <button>Keresés</button>
+                </div>
                 <div class="user-actions">
                     <a href="#"><i class="fas fa-heart"></i> Kedvencek</a>
-                    <a href="#"><i class="fas fa-bell"></i> Értesítések</a>
                     <a href="#"><i class="fas fa-user"></i> Bejelentkezés</a>
-                    <a href="#" class="btn">Autó hirdetése</a>
+                    <a href="#"><i class="fas fa-plus"></i> Eladom az autómat</a>
                 </div>
             </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#" class="active">Használtautók</a></li>
-                    <li><a href="#">Új autók</a></li>
-                    <li><a href="#">Motorkerékpárok</a></li>
-                    <li><a href="#">Gumik</a></li>
-                    <li><a href="#">Alkatrészek</a></li>
-                    <li><a href="#">Autószervizek</a></li>
-                    <li><a href="#">Magánszemélyeknek</a></li>
-                    <li><a href="#">Kereskedőknek</a></li>
-                </ul>
-            </nav>
         </div>
+        <nav>
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a class="activenav" href="#">Főoldal</a></li>
+                    <li><a href="about.html">Rólunk</a></li>
+                    <li><a href="info.html">Hasznos információk</a></li>
+                    <li><a href="safety.html">Alapvető Biztonság</a></li>
+                    <li><a href="forbuyers.html">Vevőknek</a></li>
+                    <li><a href="forsalesmen.html">Eladóknak</a></li>
+                    <li><a href="contact.html">Kapcsolat</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Találd meg álmaid autóját</h1>
-            <p>Több mint 50.000 használtautó vár rád a legjobb áron. Biztonságos vásárlás, széles választék, profi tanácsadás.</p>
-            <a href="#" class="btn">Autók tallózása</a>
-            <a href="#" class="btn btn-secondary">Autó értékesítése</a>
+            <h2>Találja meg a tökéletes autót!</h2>
+            <p>Weboldalunk segít az önnek megfelelő gépjárművet kiválasztani, és megvásárolni, valamint eladásra is biztosít lehetőséget</p>
+            <a href="#car-listings" class="btn">Mutasd az autókat!</a>
         </div>
     </section>
 
-    <!-- Main Content -->
-    <main class="container">
-        <!-- Filter Section -->
-        <section class="filter-section">
-            <div class="filter-title">
-                <h2>Részletes keresés</h2>
-                <a href="#">Összes szűrő törlése</a>
-            </div>
-            <div class="filter-grid">
+    <!-- Filters Section -->
+    <section class="filters">
+        <div class="container">
+            <div class="filter-container">
                 <div class="filter-group">
-                    <label for="brand">Márka</label>
-                    <select id="brand">
-                        <option value="">Összes márka</option>
+                    <label for="make">Márka</label>
+                    <select id="make">
+                        <option value="">Mindegy</option>
                         <option value="audi">Audi</option>
                         <option value="bmw">BMW</option>
+                        <option value="ford">Ford</option>
                         <option value="mercedes">Mercedes-Benz</option>
+                        <option value="toyota">Toyota</option>
                         <option value="volkswagen">Volkswagen</option>
-                        <option value="skoda">Skoda</option>
                     </select>
                 </div>
                 <div class="filter-group">
                     <label for="model">Modell</label>
                     <select id="model">
-                        <option value="">Összes modell</option>
+                        <option value="">Mindegy</option>
                     </select>
                 </div>
                 <div class="filter-group">
-                    <label for="price-from">Ár (Ft)</label>
-                    <div style="display: flex; gap: 10px;">
-                        <input type="number" id="price-from" placeholder="Min">
-                        <input type="number" id="price-to" placeholder="Max">
-                    </div>
-                </div>
-                <div class="filter-group">
-                    <label for="year-from">Évjárat</label>
-                    <div style="display: flex; gap: 10px;">
-                        <input type="number" id="year-from" placeholder="Min">
-                        <input type="number" id="year-to" placeholder="Max">
-                    </div>
-                </div>
-                <div class="filter-group">
-                    <label for="fuel">Üzemanyag</label>
-                    <select id="fuel">
-                        <option value="">Összes üzemanyag</option>
-                        <option value="benzin">Benzin</option>
-                        <option value="diesel">Dízel</option>
-                        <option value="hybrid">Hibrid</option>
-                        <option value="electric">Elektromos</option>
+                    <label for="price-min">Min ár</label>
+                    <select id="price-min">
+                        <option value="">0</option>
+                        <option value="5000">$5,000</option>
+                        <option value="10000">$10,000</option>
+                        <option value="15000">$15,000</option>
+                        <option value="20000">$20,000</option>
                     </select>
                 </div>
                 <div class="filter-group">
-                    <label for="transmission">Váltó</label>
-                    <select id="transmission">
-                        <option value="">Összes váltó</option>
-                        <option value="manual">Manuális</option>
-                        <option value="automatic">Automata</option>
+                    <label for="price-max">Max ár</label>
+                    <select id="price-max">
+                        <option value="">0</option>
+                        <option value="10000">$10,000</option>
+                        <option value="20000">$20,000</option>
+                        <option value="30000">$30,000</option>
+                        <option value="50000">$50,000</option>
                     </select>
+                </div>
+                <div class="filter-group">
+                    <label for="year">Évjárat</label>
+                    <select id="year">
+                        <option value="">Mindegy</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                    </select>
+                </div>
+                <div class="filter-actions">
+                    <button>Szűrés</button>
                 </div>
             </div>
-            <div class="filter-actions">
-                <button class="btn">Keresés</button>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Car Listings -->
-        <section class="car-listings">
-            <div class="section-title">
-                <h2>Ajánlott használtautók</h2>
+    <!-- Car Listings Section -->
+    <section class="listings">
+        <div class="container">
+            <div class="section-header">
                 <div class="sort-options">
                     <select>
-                        <option>Legújabb elől</option>
-                        <option>Legrégebbi elől</option>
-                        <option>Ár szerint növekvő</option>
-                        <option>Ár szerint csökkenő</option>
-                        <option>Évjárat szerint</option>
+                    
+                        <option>Rendezés: Legolcsóbb</option>
+                        <option>Rendezés: Legdrágább</option>
+                        <option>Rendezés: Legfiatalabb előre</option>
+                        <option>Rendezés: Legöregebb előre</option>
                     </select>
                 </div>
             </div>
-
-            <div class="car-grid">
-                <!-- Car Card 1 -->
-                <div class="car-card">
-                    <div class="car-image" style="background-image: url('https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
-                        <div class="car-badge">Új</div>
-                    </div>
-                    <div class="car-info">
-                        <h3 class="car-title">Audi A4 2.0 TDI</h3>
-                        <p class="car-details">2021 • 45.000 km • Dízel • Automata</p>
-                        <div class="car-price">12.490.000 Ft</div>
-                        <div class="car-features">
-                            <div class="car-feature">
-                                <i class="fas fa-tachometer-alt"></i> 45.000 km
-                            </div>
-                            <div class="car-feature">
-                                <i class="fas fa-gas-pump"></i> Dízel
-                            </div>
-                            <div class="car-feature">
-                                <i class="fas fa-cog"></i> Automata
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Car Card 2 -->
-                <div class="car-card">
-                    <div class="car-image" style="background-image: url('https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2025&q=80')">
-                        <div class="car-badge hot">Gyors eladás</div>
-                    </div>
-                    <div class="car-info">
-                        <h3 class="car-title">BMW 3 Series 320i</h3>
-                        <p class="car-details">2020 • 32.500 km • Benzin • Manuális</p>
-                        <div class="car-price">10.990.000 Ft</div>
-                        <div class="car-features">
-                            <div class="car-feature">
-                                <i class="fas fa-tachometer-alt"></i> 32.500 km
-                            </div>
-                            <div class="car-feature">
-                                <i class="fas fa-gas-pump"></i> Benzin
-                            </div>
-                            <div class="car-feature">
-                                <i class="fas fa-cog"></i> Manuális
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Car Card 3 -->
-                <div class="car-card">
-                    <div class="car-image" style="background-image: url('https://images.unsplash.com/photo-1563720223485-2390d9e188b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
-                        <div class="car-badge">Garancia</div>
-                    </div>
-                    <div class="car-info">
-                        <h3 class="car-title">Mercedes-Benz C 200</h3>
-                        <p class="car-details">2019 • 58.200 km • Benzin • Automata</p>
-                        <div class="car-price">13.750.000 Ft</div>
-                        <div class="car-features">
-                            <div class="car-feature">
-                                <i class="fas fa-tachometer-alt"></i> 58.200 km
-                            </div>
-                            <div class="car-feature">
-                                <i class="fas fa-gas-pump"></i> Benzin
-                            </div>
-                            <div class="car-feature">
-                                <i class="fas fa-cog"></i> Automata
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Car Card 4 -->
-                <div class="car-card">
-                    <div class="car-image" style="background-image: url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
-                        <div class="car-badge">Kiemelt</div>
-                    </div>
-                    <div class="car-info">
-                        <h3 class="car-title">Volkswagen Golf 1.5 TSI</h3>
-                        <p class="car-details">2022 • 15.800 km • Benzin • Automata</p>
-                        <div class="car-price">8.990.000 Ft</div>
-                        <div class="car-features">
-                            <div class="car-feature">
-                                <i class="fas fa-tachometer-alt"></i> 15.800 km
-                            </div>
-                            <div class="car-feature">
-                                <i class="fas fa-gas-pump"></i> Benzin
-                            </div>
-                            <div class="car-feature">
-                                <i class="fas fa-cog"></i> Automata
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Car Card 5 -->
-                <div class="car-card">
-                    <div class="car-image" style="background-image: url('https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
-                        <div class="car-badge">Korlátozott</div>
-                    </div>
-                    <div class="car-info">
-                        <h3 class="car-title">Skoda Octavia 2.0 TDI</h3>
-                        <p class="car-details">2020 • 72.300 km • Dízel • Manuális</p>
-                        <div class="car-price">7.850.000 Ft</div>
-                        <div class="car-features">
-                            <div class="car-feature">
-                                <i class="fas fa-tachometer-alt"></i> 72.300 km
-                            </div>
-                            <div class="car-feature">
-                                <i class="fas fa-gas-pump"></i> Dízel
-                            </div>
-                            <div class="car-feature">
-                                <i class="fas fa-cog"></i> Manuális
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Car Card 6 -->
-                <div class="car-card">
-                    <div class="car-image" style="background-image: url('https://images.unsplash.com/photo-1621135802920-133df287f89c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
-                        <div class="car-badge">Akciós</div>
-                    </div>
-                    <div class="car-info">
-                        <h3 class="car-title">Toyota Corolla 1.8 Hybrid</h3>
-                        <p class="car-details">2021 • 36.500 km • Hibrid • Automata</p>
-                        <div class="car-price">9.490.000 Ft</div>
-                        <div class="car-features">
-                            <div class="car-feature">
-                                <i class="fas fa-tachometer-alt"></i> 36.500 km
-                            </div>
-                            <div class="car-feature">
-                                <i class="fas fa-gas-pump"></i> Hibrid
-                            </div>
-                            <div class="car-feature">
-                                <i class="fas fa-cog"></i> Automata
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            
+            
+            <div class="car-grid" id="car-listings">
+                <!-- Car listings will be dynamically loaded here from the database -->
             </div>
-        </section>
-    </main>
+            
+            <div class="pagination">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">Next <i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>AutoHunt</h3>
-                    <p>Az ország legnagyobb használtautó piaca, ahol biztonságosan találhatja meg álmai autóját.</p>
+                    <h3>AutoMarket</h3>
+                    <p>Your trusted partner for finding quality used cars. We connect buyers and sellers with transparency and reliability.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h3>Vásárlás</h3>
+                    <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#">Használtautók</a></li>
-                        <li><a href="#">Új autók</a></li>
-                        <li><a href="#">Motorkerékpárok</a></li>
-                        <li><a href="#">Gumik</a></li>
-                        <li><a href="#">Alkatrészek</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">All Cars</a></li>
+                        <li><a href="#">Sell Your Car</a></li>
+                        <li><a href="#">Car Valuation</a></li>
+                        <li><a href="#">Dealer Login</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Eladás</h3>
+                    <h3>Customer Service</h3>
                     <ul>
-                        <li><a href="#">Autó értékesítése</a></li>
-                        <li><a href="#">Autó becslése</a></li>
-                        <li><a href="#">Kereskedőknek</a></li>
-                        <li><a href="#">Hirdetési díjak</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Segítség</h3>
+                    <h3>Contact Info</h3>
                     <ul>
-                        <li><a href="#">GYIK</a></li>
-                        <li><a href="#">Kapcsolat</a></li>
-                        <li><a href="#">Általános Szerződési Feltételek</a></li>
-                        <li><a href="#">Adatvédelmi nyilatkozat</a></li>
-                        <li><a href="#">Süti beállítások</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Auto Street, Car City</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@automarket.com</li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 AutoHunt - Minden jog fenntartva</p>
+            <div class="copyright">
+                <p>&copy; 2025 ---------. Minden jog fenntartva.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Simple script for demonstration purposes
+        // This script simulates loading car data from a database
+        // In a real implementation, this would be replaced with AJAX calls to your server
+        
         document.addEventListener('DOMContentLoaded', function() {
-            // Add click event to car cards
-            const carCards = document.querySelectorAll('.car-card');
-            carCards.forEach(card => {
-                card.addEventListener('click', function() {
-                    alert('Autó részleteinek megtekintése');
-                });
-            });
-
-            // Search functionality
-            const searchButton = document.querySelector('.search-bar button');
-            const searchInput = document.querySelector('.search-bar input');
-            
-            searchButton.addEventListener('click', function() {
-                if (searchInput.value.trim() !== '') {
-                    alert('Keresés: ' + searchInput.value);
-                } else {
-                    alert('Kérem, adjon meg egy keresési kifejezést!');
+            // Sample car data - in a real implementation, this would come from your SQL database
+            const cars = [
+                {
+                    id: 1,
+                    make: 'Toyota',
+                    model: 'Camry',
+                    year: 2020,
+                    price: 21500,
+                    mileage: 24500,
+                    fuel: 'Petrol',
+                    transmission: 'Automatic',
+                    image: 'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+                    badge: 'Certified'
+                },
+                {
+                    id: 2,
+                    make: 'BMW',
+                    model: '3 Series',
+                    year: 2019,
+                    price: 28900,
+                    mileage: 18500,
+                    fuel: 'Petrol',
+                    transmission: 'Automatic',
+                    image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+                    badge: 'Premium'
+                },
+                {
+                    id: 3,
+                    make: 'Ford',
+                    model: 'Focus',
+                    year: 2021,
+                    price: 18900,
+                    mileage: 12500,
+                    fuel: 'Petrol',
+                    transmission: 'Manual',
+                    image: 'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+                    badge: 'Great Deal'
+                },
+                {
+                    id: 4,
+                    make: 'Audi',
+                    model: 'A4',
+                    year: 2018,
+                    price: 26500,
+                    mileage: 32500,
+                    fuel: 'Diesel',
+                    transmission: 'Automatic',
+                    image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+                    badge: 'Certified'
+                },
+                {
+                    id: 5,
+                    make: 'Volkswagen',
+                    model: 'Golf',
+                    year: 2020,
+                    price: 19900,
+                    mileage: 19500,
+                    fuel: 'Petrol',
+                    transmission: 'Manual',
+                    image: 'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+                    badge: 'Low Mileage'
+                },
+                {
+                    id: 6,
+                    make: 'Mercedes-Benz',
+                    model: 'C-Class',
+                    year: 2019,
+                    price: 34500,
+                    mileage: 22500,
+                    fuel: 'Petrol',
+                    transmission: 'Automatic',
+                    image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+                    badge: 'Premium'
                 }
+            ];
+            
+            // Function to display cars
+            function displayCars(cars) {
+                const carListings = document.getElementById('car-listings');
+                carListings.innerHTML = '';
+                
+                cars.forEach(car => {
+                    const carCard = document.createElement('div');
+                    carCard.className = 'car-card';
+                    carCard.innerHTML = `
+                        <div class="car-image" style="background-image: url('${car.image}')">
+                            <span class="car-badge">${car.badge}</span>
+                        </div>
+                        <div class="car-details">
+                            <h3 class="car-title">${car.year} ${car.make} ${car.model}</h3>
+                            <div class="car-specs">
+                                <span><i class="fas fa-tachometer-alt"></i> ${car.mileage.toLocaleString()} mi</span>
+                                <span><i class="fas fa-gas-pump"></i> ${car.fuel}</span>
+                                <span><i class="fas fa-cog"></i> ${car.transmission}</span>
+                            </div>
+                            <div class="car-price">$${car.price.toLocaleString()}</div>
+                            <div class="car-actions">
+                                <a href="#" class="view-details">View Details</a>
+                                <a href="#" class="favorite"><i class="far fa-heart"></i></a>
+                            </div>
+                        </div>
+                    `;
+                    carListings.appendChild(carCard);
+                });
+                
+                // Add event listeners to favorite buttons
+                document.querySelectorAll('.favorite').forEach(button => {
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        this.classList.toggle('active');
+                        const icon = this.querySelector('i');
+                        if (this.classList.contains('active')) {
+                            icon.className = 'fas fa-heart';
+                        } else {
+                            icon.className = 'far fa-heart';
+                        }
+                    });
+                });
+            }
+            
+            // Initial display of cars
+            displayCars(cars);
+            
+            // Filter functionality
+            document.querySelector('.filter-actions button').addEventListener('click', function() {
+                const makeFilter = document.getElementById('make').value;
+                const priceMinFilter = document.getElementById('price-min').value;
+                const priceMaxFilter = document.getElementById('price-max').value;
+                const yearFilter = document.getElementById('year').value;
+                
+                let filteredCars = cars;
+                
+                if (makeFilter) {
+                    filteredCars = filteredCars.filter(car => car.make.toLowerCase() === makeFilter);
+                }
+                
+                if (priceMinFilter) {
+                    filteredCars = filteredCars.filter(car => car.price >= parseInt(priceMinFilter));
+                }
+                
+                if (priceMaxFilter) {
+                    filteredCars = filteredCars.filter(car => car.price <= parseInt(priceMaxFilter));
+                }
+                
+                if (yearFilter) {
+                    filteredCars = filteredCars.filter(car => car.year === parseInt(yearFilter));
+                }
+                
+                displayCars(filteredCars);
+                
+                // Update results count
+                document.querySelector('.section-header h2').textContent = `Available Cars (${filteredCars.length})`;
             });
-
-            // Enter key for search
-            searchInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    searchButton.click();
+            
+            // Search functionality
+            document.querySelector('.search-bar button').addEventListener('click', function() {
+                const searchTerm = document.querySelector('.search-bar input').value.toLowerCase();
+                
+                if (searchTerm) {
+                    const filteredCars = cars.filter(car => 
+                        car.make.toLowerCase().includes(searchTerm) || 
+                        car.model.toLowerCase().includes(searchTerm)
+                    );
+                    
+                    displayCars(filteredCars);
+                    document.querySelector('.section-header h2').textContent = `Search Results (${filteredCars.length})`;
                 }
             });
         });
