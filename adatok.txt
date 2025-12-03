@@ -1,0 +1,41 @@
+INSERT INTO cars(id, brand, model, year, body_type, mileage, color, price, fuel, top_speed, power_hp, drive, transmission, doors, seats)
+VALUES(id, "markanev", "modellnev", evjarat, "kivitel", futottkm, "szin", ar, "uzemanyag", vegsebesseg, loero, "hajtas", "valtotipus", ajtokszama, ulesekszama);
+
+
+INSERT INTO cars(id, brand, model, year, body_type, mileage, color, price, fuel, top_speed, power_hp, drive, transmission, doors, seats)
+VALUES(2, "vw", "golf5gti",2007 , "sedan", 267000, "black", 2100000, "petrol", 241, 200, "fwd", "manual", 4, 5);
+
+INSERT INTO cars(id, brand, model, year, body_type, mileage, color, price, fuel, top_speed, power_hp, drive, transmission, doors, seats)
+VALUES(2, "vw", "passat",2010 , "wagon", 237000, "blue", 1100000, "diesel", 192, 110, "fwd", "manual", 4, 5);
+
+INSERT INTO cars(id, brand, model, year, body_type, mileage, color, price, fuel, top_speed, power_hp, drive, transmission, doors, seats)
+VALUES(2, "vw", "pologti",2016 , "hatch", 162000, "white", 3800000, "petrol", 236, 192, "fwd", "manual", 2, 4);
+
+INSERT INTO cars(id, brand, model, year, body_type, mileage, color, price, fuel, top_speed, power_hp, drive, transmission, doors, seats)
+VALUES(2, "vw", "passat",2010 , "wagon", 237000, "blue", 1100000, "diesel", 192, 110, "fwd", "manual", 4, 5);
+
+INSERT INTO cars(id, brand, model, year, body_type, mileage, color, price, fuel, top_speed, power_hp, drive, transmission, doors, seats)
+VALUES(2, "volvo", "ex30",2023 , "suv", 0, "gray", 15000000, "ev", 180, 428, "rwd", "automatic", 4, 5);
+
+INSERT INTO cars(id, brand, model, year, body_type, mileage, color, price, fuel, top_speed, power_hp, drive, transmission, doors, seats)
+VALUES(2, "volvo", "v60",2015 , "suv", 143100, "black", 6000000, "hyprid_d", 190, 215, "awd", "automatic", 4, 5);
+
+INSERT INTO cars(id, brand, model, year, body_type, mileage, color, price, fuel, top_speed, power_hp, drive, transmission, doors, seats)
+VALUES(2, "volvo", "v90",2020 , "wagon", 202000, "black", 7000000, "hyprid_p", 180, 320, "fwd", "automatic", 4, 5);
+
+INSERT INTO cars(id, brand, model, year, body_type, mileage, color, price, fuel, top_speed, power_hp, drive, transmission, doors, seats)
+VALUES(2, "subaru", "brz",2012 , "coupe", 118000, "black", 12000000, "petrol", 230, 200, "fwd", "manual", 4, 2);
+
+INSERT INTO cars(id, brand, model, year, body_type, mileage, color, price, fuel, top_speed, power_hp, drive, transmission, doors, seats)
+VALUES(2, "subaru", "impreza",1998 , "coupe", 190000, "blue", 24500000, "petrol", 220, 252, "awd", "manual", 2, 5);
+
+INSERT INTO cars(id, brand, model, year, body_type, mileage, color, price, fuel, top_speed, power_hp, drive, transmission, doors, seats)
+VALUES(2, "subaru", "wrxsti",2004 , "sedan", 165100, "blue", 5500000, "petrol", 210, 265, "awd", "manual", 4, 5);
+
+
+
+
+
+
+
+
