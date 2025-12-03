@@ -1,0 +1,3 @@
+INSERT INTO cars(id, brand, model, year, body_type, mileage, color, price, fuel, top_speed, power_hp, drive, transmission, doors, seats)
+VALUES(id, "markanev", "modellnev", evjarat, "kivitel", futottkm, "szin", ar, "uzemanyag", vegsebesseg, loero, "hajtas", "valtotipus", ajtokszama, ulesekszama);
+
