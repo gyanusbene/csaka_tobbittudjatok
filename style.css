@@ -342,7 +342,12 @@
         
         /* Footer */
         footer {
-            background: var(--dark);
+             background-image: url("footer_bg.png");
+            background-size: cover;      /* kitölti a teljes területet */
+            background-position: center; /* a kép középre igazítva */
+            background-repeat: no-repeat;
+            image-rendering: -webkit-optimize-contrast; /* keeps edges sharp */
+        image-rendering: crisp-edges;               /* fallback */
             color: var(--light);
             padding: 50px 0 20px;
         }
